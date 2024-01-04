@@ -1,3 +1,13 @@
+<?php
+    $servername= "localhost";
+    $username= "root";
+    $password = "";
+    $admin = "esuba";
+    $conn = mysqli_connect($servername, $username, $password, $admin);
+    if (!$conn) {
+        echo "Connection failed!";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +32,8 @@
         }
         .img-fluid {
           margin-top: -20px;
-          min-width: 100%;
           width: 100%;
-          height: 600px;
+          height: 650px;
         }
     </style>
 </head>
@@ -50,5 +59,18 @@
       <img class="img-fluid" src="titulniobrazek.png"></img>
       <div class="container text-center">
       </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Obsah 1. sloupce -->
+            </div>
+            <div class="col-md-4">
+                <!-- Obsah 2. sloupce -->
+            </div>
+            <div class="col-md-4">
+                <!-- Obsah 3. sloupce -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
