@@ -19,7 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
-          background-color: #333;
+          background-color: black;
         }
         .navbar {
           border-radius: 0;
@@ -36,7 +36,6 @@
         .img-fluid {
           margin-top: -20px;
           width: 100%;
-          height: 650px;
         }
     </style>
 </head>
@@ -59,7 +58,9 @@
           </ul>
         </div>
       </nav>
-      <img class="img-fluid" src="titulniobrazek.png"></img>
+      <div class="container">
+        <img class="img-fluid" src="tym.png"></img>
+      </div>
       <div class="container text-center">
       </div>
       <div class="container">
