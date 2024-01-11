@@ -53,21 +53,27 @@
     </style>
 </head>
 <body>
+  <?php session_start() ?>
+  <div class="container"></div>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="hlavni-strana.php"><img id="esuba"  src="esuba-logo.png"></img></a>
           </div>
           <ul class="nav navbar-nav">
-            <li><a href="o-nas-strana.html">O NÁS</a></li>
-            <li><a href="clanky-strana.html">ČLÁNKY</a></li>
-            <li><a href="sekce-strana.html">SEKCE</a></li>
-            <li><a href="uspechy-strana.html">ÚSPĚCHY</a></li>
-            <li><a href="partneri-strana.html">PARTNEŘI</a></li>
+            <li><a href="o-nas-strana.php">O NÁS</a></li>
+            <li><a href="clanky-strana.php">ČLÁNKY</a></li>
+            <li><a href="sekce-strana.php">SEKCE</a></li>
+            <li><a href="uspechy-strana.php">ÚSPĚCHY</a></li>
+            <li><a href="partneri-strana.php">PARTNEŘI</a></li>
             <li class="active"><a>KONTAKT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Editace</a></li>
+            <?php if(isset($_SESSION['id'])): ?>
+              <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
+              <?php else: ?>
+              <li><a href="login.php"><span class="glyphicon glyphicon-pencil"></span></a></li>
+              <?php endif; ?> 
           </ul>
         </div>
       </nav>
