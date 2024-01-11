@@ -2,6 +2,7 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: hlavni-strana.php");
+$redirect_url = isset($_GET['redirect']) ? $_GET['redirect'] : 'hlavni-strana.php';
+header("Location: $redirect_url");
 exit();
 ?>
