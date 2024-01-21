@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sekce</title>
+    <title>HRÁČI</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -41,14 +41,14 @@
           <ul class="nav navbar-nav">
             <li><a href="o-nas-strana.php">O NÁS</a></li>
             <li><a href="clanky-strana.php">ČLÁNKY</a></li>
-            <li class="active"><a>SEKCE</a></li>
+            <li class="active"><a>HRÁČI</a></li>
             <li><a href="uspechy-strana.php">ÚSPĚCHY</a></li>
             <li><a href="partneri-strana.php">PARTNEŘI</a></li>
             <li><a href="kontakt-strana.php">KONTAKT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <?php if(isset($_SESSION['id'])): ?>
-              <li><a href="logout.php?redirect=http://localhost/PROJEKT/sekce-strana.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
+              <li><a href="logout.php?redirect=http://localhost/PROJEKT/hraci-strana.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
               <?php else: ?>
               <li><a href="login.php"><span class="glyphicon glyphicon-pencil"></span></a></li>
               <?php endif; ?> 
@@ -57,7 +57,7 @@
       </nav>
         
       <div class="container text-center">
-        <h1>Sekce</h1>
+        <h1>Hráči</h1>
       </div>
 </body>
 </html>

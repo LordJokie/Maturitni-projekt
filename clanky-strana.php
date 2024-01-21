@@ -41,7 +41,7 @@
           <ul class="nav navbar-nav">
             <li><a href="o-nas-strana.php">O NÁS</a></li>
             <li class="active"><a>ČLÁNKY</a></li>
-            <li><a href="sekce-strana.php">SEKCE</a></li>
+            <li><a href="hraci-strana.php">HRÁČI</a></li>
             <li><a href="uspechy-strana.php">ÚSPĚCHY</a></li>
             <li><a href="partneri-strana.php">PARTNEŘI</a></li>
             <li><a href="kontakt-strana.php">KONTAKT</a></li>
