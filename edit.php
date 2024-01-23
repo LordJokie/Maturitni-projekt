@@ -20,9 +20,9 @@
             echo "<table>";
                 echo "<tr>";
                     echo "<th>"."Jméno"."</th>";
-                    echo "<th>"."Pozice"."</th>";
+                    echo "<th>"."Kategorie"."</th>";
                     echo "<th>"."Věk"."</th>";
-                    echo "<th>"."země"."</th>";
+                    echo "<th>"."Země"."</th>";
                     echo "<th>"."Datum připojení"."</th>";
                 echo "</tr>";
                 foreach($hraci as $hrac){
@@ -42,15 +42,15 @@
             echo "</table>";
     ?>
             <form action="proved.php" method="post">
-                <label>Jmeno</label>
+                <label>Jméno</label>
                 <input type="text" name="jmeno" value="<?php echo $jmeno ?>">
-                <label>Pozice</label>
+                <label>Kategorie</label>
                 <input type="text" name="pozice" value="<?php echo $pozice ?>">
-                <label>Vek</label>
+                <label>Věk</label>
                 <input type="text" name="vek" value="<?php echo $vek ?>">
-                <label>Zeme</label>
+                <label>Země</label>
                 <input type="text" name="zeme" value="<?php echo $zeme ?>">
-                <label>Datum Pridani</label>
+                <label>Datum přidání</label>
                 <input type="date" name="datum_pripojeni" value="<?php echo $datum_pripojeni ?>">
                 <input type="hidden" name="id_edit" value="<?php echo $_POST["edit"] ?>">
                 <input type="submit">

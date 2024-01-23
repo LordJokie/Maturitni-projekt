@@ -29,6 +29,20 @@
     tr {
         background-color: white;
     }
+     #tlacitko{
+        margin-top: 5px;
+        height: 40px;
+        background-color: black;
+        color: cyan;
+    }
+
+    .btn-danger {
+        margin-top: 5px;
+    }
+
+    .table .thead-dark th {
+        background-color: black;
+    }
 </style>
 </head>
 <body>
@@ -41,19 +55,19 @@ if (isset($_SESSION['user_name'])) {
     echo 
     "<td>".
         '<form action="insert.php" method="POST">'.
-            '<input type="submit" value="přidat hráče">'.
+            '<input type="submit" value="PŘIDAT HRÁČE" id="tlacitko">'.
             '<input type="hidden" name="insert">'.
         '</form>'.
     "</td>";
     echo "</div>";
     echo "<div class='col-6 col-md-4 text-center'>";
-    echo "<a href='logout.php'>Exit</a>";
+    echo "<a href='logout.php' type='button' class='btn btn-danger'>LOGOUT</a>";
     echo "</div>";
     echo "<div class='col-6 col-md-4 text-center'>";
     echo 
     "<td>".
         '<form action="insert.php" method="POST">'.
-            '<input type="submit" value="přidat článek">'.
+            '<input type="submit" value="PŘIDAT ČLÁNEK" id="tlacitko">'.
             '<input type="hidden" name="insert2">'.
         '</form>'.
     "</td>";
@@ -69,7 +83,7 @@ if (isset($_SESSION['user_name'])) {
     echo "<thead class='thead-dark'>";
         echo "<tr>";
             echo "<th scope='col'>"."Jméno"."</th>";
-            echo "<th scope='col'>"."Pozice"."</th>";
+            echo "<th scope='col'>"."Kategorie"."</th>";
             echo "<th scope='col'>"."Věk"."</th>";
             echo "<th scope='col'>"."Země"."</th>";
             echo "<th scope='col'>"."Datum připojení"."</th>";            
@@ -80,11 +94,11 @@ if (isset($_SESSION['user_name'])) {
         echo "<tbody>";
         foreach($hraci as $hrac){
             echo "<tr>";
-                echo "<td>".$hrac['jmeno']."</th>";
-                echo "<td>".$hrac['pozice']."</th>";
-                echo "<td>".$hrac['vek']."</th>";
-                echo "<td>".$hrac['zeme']."</th>";
-                echo "<td>".$hrac['datum_pripojeni']."</th>";
+                echo "<td>".$hrac['jmeno']."</td>";
+                echo "<td>".$hrac['pozice']."</td>";
+                echo "<td>".$hrac['vek']."</td>";
+                echo "<td>".$hrac['zeme']."</td>";
+                echo "<td>".$hrac['datum_pripojeni']."</td>";
                 echo 
                     "<td>".
                         '<form action="edit.php" method="POST">'.
@@ -124,11 +138,11 @@ if (isset($_SESSION['user_name'])) {
         echo "<tbody>";
         foreach($clanky as $clanek){
             echo "<tr>";
-                echo "<td>".$clanek['nazev']."</th>";
-                echo "<td>".$clanek['autor']."</th>";
-                echo "<td>".$clanek['kategorie']."</th>";
-                echo "<td>".$clanek['obsah']."</th>";
-                echo "<td>".$clanek['datum_vydani']."</th>";
+                echo "<td>".$clanek['nazev']."</td>";
+                echo "<td>".$clanek['autor']."</td>";
+                echo "<td>".$clanek['kategorie']."</td>";
+                echo "<td>".$clanek['obsah']."</td>";
+                echo "<td>".$clanek['datum_vydani']."</td>";
                 echo 
                     "<td>".
                         '<form action="edit.php" method="POST">'.
