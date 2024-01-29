@@ -36,6 +36,17 @@
         .img-fluid {
           margin-top: -20px;
           width: 100%;
+          height: 100%;
+        }
+        #modrej {
+          background-color: #0069FF;
+          height: 150px;
+        }
+        .modrakrev {
+          color: white;
+          font-weight: bold;
+          font-size: 80px;
+          margin-top: 20px;
         }
     </style>
 </head>
@@ -65,22 +76,14 @@
           </ul>
         </div>
       </nav>
-      <div class="container">
+      <div class="container-fluid">
         <img class="img-fluid" src="tym.png"></img>
       </div>
       <div class="container text-center">
       </div>
-      <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <!-- Obsah 1. sloupce -->
-            </div>
-            <div class="col-md-4">
-                <!-- Obsah 2. sloupce -->
-            </div>
-            <div class="col-md-4">
-                <!-- Obsah 3. sloupce -->
-            </div>
+      <div class="container-fluid">
+        <div class="row text-center" id="modrej">
+                 <p class="modrakrev">#modrakrev</p>
         </div>
     </div>
 </body>

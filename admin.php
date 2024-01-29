@@ -9,8 +9,27 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
+
     body {
         background-color: grey;
+    }
+
+    @media only screen and (max-width: 1199.5px) {
+        body {
+        background-color: lightblue;
+        }
+    }
+
+    @media only screen and (max-width: 991.5px) {
+        body {
+        background-color: red;
+        }
+    }
+
+    @media only screen and (max-width: 767.5px) {
+        body {
+        background-color: green;
+        }
     }
     .row {
         margin-left: 0px;
@@ -35,6 +54,14 @@
         background-color: black;
         color: cyan;
     }
+    #tlacitko:hover {
+        background-color: cyan;
+        color: #000;
+        cursor: pointer;
+        box-shadow: 0 0 10px  cyan, 0 0 20px cyan, 0 0 30px cyan;
+        border: 1px solid transparent;
+        transition: 0.4s;
+    }
 
     .btn-danger {
         margin-top: 5px;
@@ -43,6 +70,7 @@
     .table .thead-dark th {
         background-color: black;
     }
+    
 </style>
 </head>
 <body>

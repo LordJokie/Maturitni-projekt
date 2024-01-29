@@ -10,7 +10,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 97vh;
             flex-direction: column;
             }
 
@@ -106,8 +106,8 @@
     $servername= "localhost";
     $username= "root";
     $password = "";
-    $admin = "admin";
-    $conn = mysqli_connect($servername, $username, $password, $admin);
+    $esuba = "esuba";
+    $conn = mysqli_connect($servername, $username, $password, $esuba);
     if (!$conn) {
         echo "Connection failed!";
     }
