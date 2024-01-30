@@ -24,7 +24,7 @@
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-          background: #b30000; 
+          background: #002F6C; 
         }
         body {
           background-color: black;
@@ -51,7 +51,7 @@
 </head>
 <body>
    <?php session_start() ?>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="hlavni-strana.php"><img id="esuba"  src="esuba-logo.png"></img></a>
