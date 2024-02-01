@@ -70,7 +70,18 @@
     .table .thead-dark th {
         background-color: black;
     }
-    
+    .table td, .table th {
+        vertical-align: middle;
+    }
+    td {
+        max-width: 100px;
+        height: 66px;
+
+    }
+    #obsah {
+        overflow: hidden;
+        overflow-x: scroll;
+    }
 </style>
 </head>
 <body>
@@ -169,7 +180,7 @@ if (isset($_SESSION['user_name'])) {
                 echo "<td>".$clanek['nazev']."</td>";
                 echo "<td>".$clanek['autor']."</td>";
                 echo "<td>".$clanek['kategorie']."</td>";
-                echo "<td>".$clanek['obsah']."</td>";
+                echo "<td id='obsah'>".$clanek['obsah']."</td>";
                 echo "<td>".$clanek['datum_vydani']."</td>";
                 echo 
                     "<td>".

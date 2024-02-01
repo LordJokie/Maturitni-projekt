@@ -108,7 +108,5 @@ if(isset($_POST["edit2"])){
     <?php
         }
     ?>
-    
-
 </body>
 </html>
