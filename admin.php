@@ -76,9 +76,16 @@
     td {
         max-width: 100px;
         height: 66px;
-
+    }
+    #jmeno {
+        overflow: hidden;
+        overflow-x: scroll;
     }
     #obsah {
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    #nazev {
         overflow: hidden;
         overflow-x: scroll;
     }
@@ -125,7 +132,7 @@ if (isset($_SESSION['user_name'])) {
             echo "<th scope='col'>"."Kategorie"."</th>";
             echo "<th scope='col'>"."Věk"."</th>";
             echo "<th scope='col'>"."Země"."</th>";
-            echo "<th scope='col'>"."Datum připojení"."</th>";            
+            echo "<th scope='col'>"."Pozice"."</th>";            
             echo "<th scope='col'>"."Edit"."</th>";
             echo "<th scope='col'>"."Delete"."</th>";
         echo "</tr>";
@@ -133,11 +140,11 @@ if (isset($_SESSION['user_name'])) {
         echo "<tbody>";
         foreach($hraci as $hrac){
             echo "<tr>";
-                echo "<td>".$hrac['jmeno']."</td>";
-                echo "<td>".$hrac['pozice']."</td>";
+                echo "<td id='jmeno'>".$hrac['jmeno']."</td>";
+                echo "<td>".$hrac['kategorie']."</td>";
                 echo "<td>".$hrac['vek']."</td>";
                 echo "<td>".$hrac['zeme']."</td>";
-                echo "<td>".$hrac['datum_pripojeni']."</td>";
+                echo "<td>".$hrac['pozice']."</td>";
                 echo 
                     "<td>".
                         '<form action="edit.php" method="POST">'.
@@ -177,7 +184,7 @@ if (isset($_SESSION['user_name'])) {
         echo "<tbody>";
         foreach($clanky as $clanek){
             echo "<tr>";
-                echo "<td>".$clanek['nazev']."</td>";
+                echo "<td id='nazev'>".$clanek['nazev']."</td>";
                 echo "<td>".$clanek['autor']."</td>";
                 echo "<td>".$clanek['kategorie']."</td>";
                 echo "<td id='obsah'>".$clanek['obsah']."</td>";
@@ -202,7 +209,7 @@ if (isset($_SESSION['user_name'])) {
     echo "</table>";
     echo "</div>";
     echo "</div>";
-}
+        }
 else {
     header("Location: hlavni-strana.php");
 }

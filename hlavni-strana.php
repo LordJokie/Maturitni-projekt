@@ -39,6 +39,9 @@
         body {
           background-color: black;
         }
+        .navbar-inverse .navbar-nav>li>a {
+          color: #F2ECFF;
+        }
         .navbar {
           border-radius: 0;
         }
@@ -50,6 +53,10 @@
         }
         .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
           transition: 0.5s;
+          color: #007FFF;
+        }
+        .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+          color: #007FFF;
         }
         .img-fluid {
           margin-top: -20px;
@@ -66,6 +73,12 @@
           font-size: 80px;
           margin-top: 20px;
         }
+        #fluid1 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+
     </style>
 </head>
 <body>
@@ -75,7 +88,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand"><img id="esuba"  src="esuba-logo.png"></img></a>
+            <a class="navbar-brand"><img id="esuba"  src="logo.png"></img></a>
           </div>
           <ul class="nav navbar-nav">
             <li><a href="o-nas-strana.php">O NÁS</a></li>
@@ -94,8 +107,8 @@
           </ul>
         </div>
       </nav>
-      <div class="container-fluid">
-        <img class="img-fluid" src="tym.png"></img>
+      <div class="container-fluid" id="fluid1">
+        <img class="img-fluid" src="esuba-tym.png"></img>
       </div>
       <div class="container text-center">
       </div>

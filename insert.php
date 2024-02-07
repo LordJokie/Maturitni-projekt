@@ -23,20 +23,20 @@
                     echo "<th>"."Kategorie"."</th>";
                     echo "<th>"."Věk"."</th>";
                     echo "<th>"."Země"."</th>";
-                    echo "<th>"."Datum připojení"."</th>";
+                    echo "<th>"."Pozice"."</th>";
                 echo "</tr>";
                 foreach($hraci as $hrac){
                     $jmeno = $hrac['jmeno'];
-                    $pozice = $hrac['pozice'];
+                    $kategorie = $hrac['kategorie'];
                     $vek = $hrac['vek'];
                     $zeme = $hrac['zeme'];
-                    $datum_pripojeni = $hrac['datum_pripojeni'];
+                    $pozice = $hrac['pozice'];
                     echo "<tr>";
                         echo "<th>".$jmeno."</th>";
-                        echo "<th>".$pozice."</th>";
+                        echo "<th>".$kategorie."</th>";
                         echo "<th>".$vek."</th>";
                         echo "<th>".$zeme."</th>";
-                        echo "<th>".$datum_pripojeni."</th>";
+                        echo "<th>".$pozice."</th>";
                     echo "</tr>";
                 };
             echo "</table>";
@@ -45,13 +45,13 @@
                 <label>Jméno</label>
                 <input type="text" name="jmeno">
                 <label>Kategorie</label>
-                <input type="text" name="pozice">
+                <input type="text" name="kategorie">
                 <label>Věk</label>
                 <input type="text" name="vek">
                 <label>Země</label>
                 <input type="text" name="zeme">
-                <label>Datum Přidání</label>
-                <input type="date" name="datum_pripojeni">
+                <label>Pozice</label>
+                <input type="text" name="pozice">
                 <input type="hidden" name="insert">
                 <input type="submit">
             </form>

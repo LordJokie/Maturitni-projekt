@@ -35,6 +35,12 @@
           font-size: 50px;
           font-weight: bold;
         }
+        .navbar-inverse .navbar-nav>li>a {
+          color: #F2ECFF;
+        }   
+        .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+          color: #007FFF;
+        }   
         .navbar {
             border-radius: 0;
         }
@@ -44,9 +50,6 @@
         .navbar-brand {
             margin-top: -10px;          
         }
-        .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
-          transition: 0.5s;
-        }
     </style>
 </head>
 <body>
@@ -54,7 +57,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="hlavni-strana.php"><img id="esuba"  src="esuba-logo.png"></img></a>
+            <a class="navbar-brand" href="hlavni-strana.php"><img id="esuba"  src="logo.png"></img></a>
           </div>
           <ul class="nav navbar-nav">
             <li><a href="o-nas-strana.php">O NÁS</a></li>

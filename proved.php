@@ -2,12 +2,12 @@
 require_once("dbconfig.php");
 if(isset($_POST['id_edit'])){
     $jmeno = $_POST['jmeno'];
-    $pozice = $_POST['pozice'];
+    $kategorie = $_POST['kategorie'];
     $vek = $_POST['vek'];
     $zeme = $_POST['zeme'];
-    $datum_pripojeni = $_POST['datum_pripojeni'];
+    $pozice = $_POST['pozice'];
 
-    $sql = "UPDATE hraci SET jmeno = '".$jmeno."', pozice = '".$pozice."', vek = '".$vek."', zeme = '".$zeme."', datum_pripojeni = '".$datum_pripojeni."' WHERE id = ".$_POST['id_edit']."";
+    $sql = "UPDATE hraci SET jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."' WHERE id = ".$_POST['id_edit']."";
 
     $conn->query($sql);
 }
@@ -17,11 +17,11 @@ if(isset($_POST['delete'])){
 }
 if(isset($_POST['insert'])) {
     $jmeno = $_POST['jmeno'];
-    $pozice = $_POST['pozice'];
+    $kategorie = $_POST['kategorie'];
     $vek = $_POST['vek'];
     $zeme = $_POST['zeme'];
-    $datum_pripojeni = $_POST['datum_pripojeni'];
-    $sql = "INSERT INTO hraci SET jmeno = '".$jmeno."', pozice = '".$pozice."', vek = '".$vek."', zeme = '".$zeme."', datum_pripojeni = '".$datum_pripojeni."'";
+    $pozice = $_POST['pozice'];
+    $sql = "INSERT INTO hraci SET jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."'";
     $conn->query($sql);
 }
 
