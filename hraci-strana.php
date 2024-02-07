@@ -35,6 +35,10 @@
           font-size: 50px;
           font-weight: bold;
         }
+        .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+          transition: 0.5s;
+          color: #007FFF;
+        }
         .navbar-inverse .navbar-nav>li>a {
           color: #F2ECFF;
         }   
