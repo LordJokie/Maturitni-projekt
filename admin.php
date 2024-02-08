@@ -72,23 +72,35 @@
     }
     .table td, .table th {
         vertical-align: middle;
+        padding: 0.4rem;
     }
     td {
-        max-width: 100px;
-        height: 66px;
-    }
-    #jmeno {
+        max-width: 118px;
         overflow: hidden;
         overflow-x: scroll;
     }
-    #obsah {
-        overflow: hidden;
-        overflow-x: scroll;
-    }
-    #nazev {
-        overflow: hidden;
-        overflow-x: scroll;
-    }
+
+.table td::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+.table td::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.table td::-webkit-scrollbar-thumb {
+  background-color: cyan;
+  border-radius: 2px;
+}
+
+.table td.needs-scrollbar::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+.table td.no-scrollbar::-webkit-scrollbar-thumb {
+  display: none;
+}
 </style>
 </head>
 <body>
