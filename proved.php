@@ -1,11 +1,11 @@
 <?php
 require_once("dbconfig.php");
+$key = array_keys($_POST);
+foreach ($key as $klic){
+    $replaced = str_replace(' ', ' ', $_POST["$klic"]);
+    $_POST["$klic"] = $replaced;
+}
 if(isset($_POST['id_edit'])){
-    $key = array_keys($_POST);
-    foreach ($key as $klic){
-        $replaced = str_replace(' ', ' ', $_POST["$klic"]);
-        $_POST["$klic"] = $replaced;
-    }
     $jmeno = $_POST['jmeno'];
     $kategorie = $_POST['kategorie'];
     $vek = $_POST['vek'];
@@ -21,11 +21,6 @@ if(isset($_POST['delete'])){
     $conn->query($sql);
 }
 if(isset($_POST['insert'])) {
-    $key = array_keys($_POST);
-    foreach ($key as $klic){
-        $replaced = str_replace(' ', ' ', $_POST["$klic"]);
-        $_POST["$klic"] = $replaced;
-    }
     $jmeno = $_POST['jmeno'];
     $kategorie = $_POST['kategorie'];
     $vek = $_POST['vek'];
@@ -41,11 +36,6 @@ if(isset($_POST['insert'])) {
 
 
 if(isset($_POST['id_edit2'])){
-    $key = array_keys($_POST);
-    foreach ($key as $klic){
-        $replaced = str_replace(' ', ' ', $_POST["$klic"]);
-        $_POST["$klic"] = $replaced;
-    }
     $nazev = $_POST['nazev'];
     $autor = $_POST['autor'];
     $kategorie = $_POST['kategorie'];
@@ -61,11 +51,6 @@ if(isset($_POST['delete2'])){
     $conn->query($mysql);
 }
 if(isset($_POST['insert2'])) {
-    $key = array_keys($_POST);
-    foreach ($key as $klic){
-        $replaced = str_replace(' ', ' ', $_POST["$klic"]);
-        $_POST["$klic"] = $replaced;
-    }
     $nazev = $_POST['nazev'];
     $autor = $_POST['autor'];
     $kategorie = $_POST['kategorie'];
