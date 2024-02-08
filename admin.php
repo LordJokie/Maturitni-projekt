@@ -138,6 +138,8 @@ if (isset($_SESSION['user_name'])) {
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
+
+        
         foreach($hraci as $hrac){
             echo "<tr>";
                 echo "<td id='jmeno'>".$hrac['jmeno']."</td>";
@@ -209,7 +211,7 @@ if (isset($_SESSION['user_name'])) {
     echo "</table>";
     echo "</div>";
     echo "</div>";
-        }
+    }
 else {
     header("Location: hlavni-strana.php");
 }
