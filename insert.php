@@ -19,6 +19,7 @@
             $hraci = $conn->query($sql);
             echo "<table>";
                 echo "<tr>";
+                    echo "<th>"."Přezdívka"."</th>";
                     echo "<th>"."Jméno"."</th>";
                     echo "<th>"."Kategorie"."</th>";
                     echo "<th>"."Věk"."</th>";
@@ -26,12 +27,14 @@
                     echo "<th>"."Pozice"."</th>";
                 echo "</tr>";
                 foreach($hraci as $hrac){
+                    $prezdivka = $hrac['prezdivka'];
                     $jmeno = $hrac['jmeno'];
                     $kategorie = $hrac['kategorie'];
                     $vek = $hrac['vek'];
                     $zeme = $hrac['zeme'];
                     $pozice = $hrac['pozice'];
                     echo "<tr>";
+                        echo "<th>".$prezdivka."</th>";
                         echo "<th>".$jmeno."</th>";
                         echo "<th>".$kategorie."</th>";
                         echo "<th>".$vek."</th>";
@@ -42,6 +45,8 @@
             echo "</table>";
     ?>
             <form action="proved.php" method="post">
+                <label>Přezdívka</label>
+                <input type="text" name="prezdivka">
                 <label>Jméno</label>
                 <input type="text" name="jmeno">
                 <label>Kategorie</label>

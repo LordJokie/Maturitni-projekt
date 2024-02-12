@@ -44,6 +44,7 @@
     }
     .table-bordered {
         border: 3px solid cyan;
+        margin: 0;
     }
     tr {
         background-color: white;
@@ -79,28 +80,33 @@
         overflow: hidden;
         overflow-x: scroll;
     }
+    
+    input {
+        text-align: center;
+    }
 
-.table td::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-}
+    .table td::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+    }
 
-.table td::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+    .table td::-webkit-scrollbar-track {
+    background-color: transparent;
+    }
 
-.table td::-webkit-scrollbar-thumb {
-  background-color: cyan;
-  border-radius: 2px;
-}
+    .table td::-webkit-scrollbar-thumb {
+    background-color: cyan;
+    border-radius: 2px;
+    }
 
-.table td.needs-scrollbar::-webkit-scrollbar-thumb {
-  display: block;
-}
+    .table td.needs-scrollbar::-webkit-scrollbar-thumb {
+    display: block;
+    }
 
-.table td.no-scrollbar::-webkit-scrollbar-thumb {
-  display: none;
-}
+    .table td.no-scrollbar::-webkit-scrollbar-thumb {
+    display: none;
+    }
+
 </style>
 </head>
 <body>
@@ -108,7 +114,18 @@
 session_start();
 if (isset($_SESSION['user_name'])) {
 
+
     echo "<div class='row' id='hihi'>";
+    echo "<div class='col-6 col-md-4 text-center'>";
+    echo 
+    "<td>".
+        '<form action="hraci/clanky.php">'.
+            '<input type="submit" value="ZPĚT" id="tlacitko">'.
+            '<input type="hidden">'.
+        '</form>'.
+    "</td>";
+    echo "</div>";
+    
     echo "<div class='col-6 col-md-4 text-center'>";
     echo 
     "<td>".
@@ -118,28 +135,22 @@ if (isset($_SESSION['user_name'])) {
         '</form>'.
     "</td>";
     echo "</div>";
+
     echo "<div class='col-6 col-md-4 text-center'>";
     echo "<a href='logout.php' type='button' class='btn btn-danger'>LOGOUT</a>";
-    echo "</div>";
-    echo "<div class='col-6 col-md-4 text-center'>";
-    echo 
-    "<td>".
-        '<form action="insert.php" method="POST">'.
-            '<input type="submit" value="PŘIDAT ČLÁNEK" id="tlacitko">'.
-            '<input type="hidden" name="insert2">'.
-        '</form>'.
-    "</td>";
     echo "</div>";
     echo "</div>";
 
     require_once("dbconfig.php");
     $sql = "SELECT * FROM hraci";
     $hraci = $conn->query($sql);
+
     echo "<div class='row'>";
-    echo "<div class='col-6'>";
+    echo "<div class='container-fluid p-0'>";
     echo "<table class='table table-bordered text-center'>";
     echo "<thead class='thead-dark'>";
         echo "<tr>";
+            echo "<th scope='col'>"."Přezdívka"."</th>";
             echo "<th scope='col'>"."Jméno"."</th>";
             echo "<th scope='col'>"."Kategorie"."</th>";
             echo "<th scope='col'>"."Věk"."</th>";
@@ -150,78 +161,77 @@ if (isset($_SESSION['user_name'])) {
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
-
-        
-        foreach($hraci as $hrac){
-            echo "<tr>";
-                echo "<td id='jmeno'>".$hrac['jmeno']."</td>";
-                echo "<td>".$hrac['kategorie']."</td>";
-                echo "<td>".$hrac['vek']."</td>";
-                echo "<td>".$hrac['zeme']."</td>";
-                echo "<td>".$hrac['pozice']."</td>";
-                echo 
-                    "<td>".
-                        '<form action="edit.php" method="POST">'.
-                            '<input type="submit" value="edit">'.
-                            '<input type="hidden" name="edit" value='.$hrac["id"].'>'.
-                        '</form>'.
-                    "</td>";
-                echo 
-                    "<td>".
-                        '<form action="proved.php" method="POST">'.
-                            '<input type="submit" value="delete">'.
-                            '<input type="hidden" name="delete" value='.$hrac["id"].'>'.
-                        '</form>'.
-                    "</td>";
-            echo "</tr>";
+        foreach( $hraci as $hrac ) {
+            if(isset($_POST["update1"])){
+                if($_POST["update1"]=="$hrac[id]"){
+                echo "<tr>";
+                    echo "<form action='proved.php' method='POST'>";
+                    echo "<td><input type='text' name='prezdivka' value='".$hrac['prezdivka']."'/></td>";
+                    echo "<td><input type='text' name='jmeno' value='".$hrac['jmeno']."'/></td>";
+                    echo "<td><input type='text' name='kategorie' value='".$hrac['kategorie']."'/></td>";
+                    echo "<td><input type='number' name='vek' value='".$hrac['vek']."'/></td>";
+                    echo "<td><input type='text' name='zeme' value='".$hrac['zeme']."'/></td>";
+                    echo "<td><input type='text' name='pozice' value='".$hrac['pozice']."'/></td>";
+                    echo '<input type="hidden" name="update" value='.$hrac["id"].'>';
+                    echo "<td>".'<input type="submit" value="save">'."</td>";
+                      echo "</form>";
+                      echo 
+                      "<td>".
+                          '<form action="proved.php" method="POST">'.
+                              '<input type="submit" value="delete">'.
+                              '<input type="hidden" name="delete" value='.$hrac["id"].'>'.
+                          '</form>'.
+                      "</td>";
+                    echo "</tr>";
+                }
+                else {
+                    echo "<tr>";
+                        echo "<form action='admin.php' method='POST'>";
+                            echo "<td>" .$hrac['prezdivka']."</td>";
+                            echo "<td>" .$hrac['jmeno']."</td>";
+                            echo "<td>" .$hrac['kategorie']."</td>";
+                            echo "<td>" .$hrac['vek']."</td>";
+                            echo "<td>" .$hrac['zeme']."</td>";
+                            echo "<td>" .$hrac['pozice']."</td>";
+                            echo '<input type="hidden" name="update1" value='.$hrac["id"].'>';
+                            echo "<td>".'<input type="submit" value="edit">'."</td>";
+                            echo "</form>";
+            
+                        echo 
+                            "<td>".
+                                '<form action="proved.php" method="POST">'.
+                                    '<input type="submit" value="delete">'.
+                                    '<input type="hidden" name="delete" value='.$hrac["id"].'>'.
+                                '</form>'.
+                            "</td>";
+                    echo "</tr>";
+                }
+            }
+            else {
+                echo "<tr>";
+                        echo "<form action='admin.php' method='POST'>";
+                            echo "<td>" .$hrac['prezdivka']."</td>";
+                            echo "<td>" .$hrac['jmeno']."</td>";
+                            echo "<td>" .$hrac['kategorie']."</td>";
+                            echo "<td>" .$hrac['vek']."</td>";
+                            echo "<td>" .$hrac['zeme']."</td>";
+                            echo "<td>" .$hrac['pozice']."</td>";
+                            echo '<input type="hidden" name="update1" value='.$hrac["id"].'>';
+                            echo "<td>".'<input type="submit" value="edit">'."</td>";
+                            echo "</form>";
+            
+                        echo 
+                            "<td>".
+                                '<form action="proved.php" method="POST">'.
+                                    '<input type="submit" value="delete">'.
+                                    '<input type="hidden" name="delete" value='.$hrac["id"].'>'.
+                                '</form>'.
+                            "</td>";
+                    echo "</tr>";
+            }
         };
         echo "</tbody>";
     echo "</table>";
-    echo "</div>";
-
-
-    $mysql = "SELECT * FROM clanky";
-    $clanky = $conn->query($mysql);
-    echo "<div class='col-6'>";
-    echo "<table class='table table-bordered text-center'>";
-    echo "<thead class='thead-dark'>";
-        echo "<tr>";
-            echo "<th scope='col'>"."Název"."</th>";
-            echo "<th scope='col'>"."Autor"."</th>";
-            echo "<th scope='col'>"."Kategorie"."</th>";
-            echo "<th scope='col'>"."Obsah"."</th>";
-            echo "<th scope='col'>"."Datum vydání"."</th>";            
-            echo "<th scope='col'>"."Edit"."</th>";
-            echo "<th scope='col'>"."Delete"."</th>";
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
-        foreach($clanky as $clanek){
-            echo "<tr>";
-                echo "<td id='nazev'>".$clanek['nazev']."</td>";
-                echo "<td>".$clanek['autor']."</td>";
-                echo "<td>".$clanek['kategorie']."</td>";
-                echo "<td id='obsah'>".$clanek['obsah']."</td>";
-                echo "<td>".$clanek['datum_vydani']."</td>";
-                echo 
-                    "<td>".
-                        '<form action="edit.php" method="POST">'.
-                            '<input type="submit" value="edit">'.
-                            '<input type="hidden" name="edit2" value='.$clanek["id"].'>'.
-                        '</form>'.
-                    "</td>";
-                echo 
-                    "<td>".
-                        '<form action="proved.php" method="POST">'.
-                            '<input type="submit" value="delete">'.
-                            '<input type="hidden" name="delete2" value='.$clanek["id"].'>'.
-                        '</form>'.
-                    "</td>";
-            echo "</tr>";
-        };
-        echo "</tbody>";
-    echo "</table>";
-    echo "</div>";
     echo "</div>";
     }
 else {
