@@ -18,10 +18,12 @@ if(isset($_POST['update'])){
     $sql = "UPDATE hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."' WHERE id = ".$_POST['update']."";
 
     $conn->query($sql);
+    header("Location: hraci-tabulka.php");
 }
 if(isset($_POST['delete'])){
     $sql = "DELETE FROM hraci WHERE id = ".$_POST['delete']."";
     $conn->query($sql);
+    header("Location: hraci-tabulka.php");
 }
 if(isset($_POST['insert'])) {
     $prezdivka = $_POST['prezdivka'];
@@ -32,6 +34,7 @@ if(isset($_POST['insert'])) {
     $pozice = $_POST['pozice'];
     $sql = "INSERT INTO hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."'";
     $conn->query($sql);
+    header("Location: hraci-tabulka.php");
     
 }
 
@@ -49,10 +52,12 @@ if(isset($_POST['id_update2'])){
     $mysql = "UPDATE clanky SET nazev = '".$nazev."', autor = '".$autor."', kategorie = '".$kategorie."', obsah = '".$obsah."', datum_vydani = '".$datum_vydani."' WHERE id = ".$_POST['id_update2']."";
 
     $conn->query($mysql);
+    header("Location: clanky-tabulka.php");
 }
 if(isset($_POST['delete2'])){
     $mysql = "DELETE FROM clanky WHERE id = ".$_POST['delete2']."";
     $conn->query($mysql);
+    header("Location: clanky-tabulka.php");
 }
 if(isset($_POST['insert2'])) {
     $nazev = $_POST['nazev'];
@@ -64,6 +69,6 @@ if(isset($_POST['insert2'])) {
     $mysql = "INSERT INTO clanky SET nazev = '".$nazev."', autor = '".$autor."', kategorie = '".$kategorie."', obsah = '".$obsah."', datum_vydani = '".$datum_vydani."'";
 
     $conn->query($mysql);
+    header("Location: clanky-tabulka.php");
 }
-header("Location: admin.php");
 ?>

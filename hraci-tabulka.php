@@ -119,7 +119,7 @@ if (isset($_SESSION['user_name'])) {
     echo "<div class='col-6 col-md-4 text-center'>";
     echo 
     "<td>".
-        '<form action="hraci/clanky.php">'.
+        '<form action="rozcesti.php">'.
             '<input type="submit" value="ZPĚT" id="tlacitko">'.
             '<input type="hidden">'.
         '</form>'.
@@ -129,9 +129,9 @@ if (isset($_SESSION['user_name'])) {
     echo "<div class='col-6 col-md-4 text-center'>";
     echo 
     "<td>".
-        '<form action="insert.php" method="POST">'.
+        '<form action="hraci-tabulka.php" method="POST">'.
             '<input type="submit" value="PŘIDAT HRÁČE" id="tlacitko">'.
-            '<input type="hidden" name="insert">'.
+            '<input type="hidden" name="insert1">'.
         '</form>'.
     "</td>";
     echo "</div>";
@@ -161,6 +161,34 @@ if (isset($_SESSION['user_name'])) {
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
+
+
+
+        if(isset($_POST["insert1"])){
+            echo "<tr>";
+                    echo "<form action='proved.php' method='POST'>";
+                    echo "<td><input type='text' name='prezdivka'/></td>";
+                    echo "<td><input type='text' name='jmeno'/></td>";
+                    echo "<td><input type='text' name='kategorie'/></td>";
+                    echo "<td><input type='number' name='vek'/></td>";
+                    echo "<td><input type='text' name='zeme'/></td>";
+                    echo "<td><input type='text' name='pozice'/></td>";
+                    echo '<input type="hidden" name="insert">';
+                    echo "<td>".'<input type="submit" value="add">'."</td>";
+                    echo "</form>";
+                    echo 
+                            "<td>".
+                                '<form action="hraci-tabulka.php" method="POST">'.
+                                    '<input type="submit" value="cancel">'.
+                                '</form>'.
+                            "</td>";
+                      
+                      
+        }
+
+
+
+
         foreach( $hraci as $hrac ) {
             if(isset($_POST["update1"])){
                 if($_POST["update1"]=="$hrac[id]"){
@@ -186,7 +214,7 @@ if (isset($_SESSION['user_name'])) {
                 }
                 else {
                     echo "<tr>";
-                        echo "<form action='admin.php' method='POST'>";
+                        echo "<form action='hraci-tabulka.php' method='POST'>";
                             echo "<td>" .$hrac['prezdivka']."</td>";
                             echo "<td>" .$hrac['jmeno']."</td>";
                             echo "<td>" .$hrac['kategorie']."</td>";
@@ -209,7 +237,7 @@ if (isset($_SESSION['user_name'])) {
             }
             else {
                 echo "<tr>";
-                        echo "<form action='admin.php' method='POST'>";
+                        echo "<form action='hraci-tabulka.php' method='POST'>";
                             echo "<td>" .$hrac['prezdivka']."</td>";
                             echo "<td>" .$hrac['jmeno']."</td>";
                             echo "<td>" .$hrac['kategorie']."</td>";

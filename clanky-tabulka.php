@@ -114,7 +114,7 @@
         echo "<div class='col-6 col-md-4 text-center'>";
         echo 
         "<td>".
-            '<form action="hraci/clanky.php">'.
+            '<form action="rozcesti.php">'.
                 '<input type="submit" value="ZPĚT" id="tlacitko">'.
                 '<input type="hidden">'.
             '</form>'.
