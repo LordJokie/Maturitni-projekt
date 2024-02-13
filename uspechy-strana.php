@@ -72,7 +72,7 @@
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: 0.1px;
+          height: min-content;
         }
     </style>
 </head>

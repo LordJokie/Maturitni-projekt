@@ -21,7 +21,7 @@
 
             form {
             width: 1000px;
-            border: 3px solid #007FFF;
+            border: 3px solid cyan;
             padding: 20px;
             background: transparent;
             border-radius: 20px;
@@ -30,7 +30,7 @@
             h2 {
             text-align: center;
             margin-bottom: 40px;
-            color: #007FFF;
+            color: cyan;
             }
 
             input {
@@ -43,7 +43,7 @@
             }
 
             label {
-            color: #007FFF;
+            color: cyan;
             font-size: 18px;
             padding: 10px;
             }
@@ -52,18 +52,18 @@
             float: right;
             background: transparent;
             padding: 10px 15px;
-            color: #007FFF;
+            color: cyan;
             border-radius: 5px;
             margin-right: 10px;
-            border: 1px solid #007FFF;
+            border: 1px solid cyan;
             transition: .3s;
             }
 
             button:hover{
-            background: #007FFF;
+            background: cyan;
             color: #000;
             cursor: pointer;
-            box-shadow: 0 0 10px  #007FFF, 0 0 20px #007FFF, 0 0 30px #007FFF;
+            box-shadow: 0 0 10px  cyan, 0 0 20px cyan, 0 0 30px cyan;
             border: 1px solid transparent;
             }
 
