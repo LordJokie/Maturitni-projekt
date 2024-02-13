@@ -44,6 +44,16 @@
         #esuba {
           width: 35px;
         }
+        #modrej {
+          background-color: #0069FF;
+          height: 150px;
+        }
+        .modrakrev {
+          color: white;
+          font-weight: bold;
+          font-size: 80px;
+          margin-top: 20px;
+        }
         .navbar-brand {
           margin-top: -10px;          
         }
@@ -53,6 +63,12 @@
         }
         .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
           color: #007FFF;
+        }
+        footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 0.1px;
         }
     </style>
 </head>
@@ -84,5 +100,13 @@
       <div class="container text-center">
         <h1>Články</h1>
       </div>
+
+      <footer>
+            <div class="container-fluid">
+              <div class="row text-center" id="modrej">
+                      <p class="modrakrev">#modrakrev</p>
+              </div>
+          </div>
+      </footer>
 </body>
 </html>

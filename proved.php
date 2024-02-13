@@ -42,14 +42,14 @@ if(isset($_POST['insert'])) {
 
 
 
-if(isset($_POST['id_update2'])){
+if(isset($_POST['update2'])){
     $nazev = $_POST['nazev'];
     $autor = $_POST['autor'];
     $kategorie = $_POST['kategorie'];
     $obsah = $_POST['obsah'];
     $datum_vydani = $_POST['datum_vydani'];
 
-    $mysql = "UPDATE clanky SET nazev = '".$nazev."', autor = '".$autor."', kategorie = '".$kategorie."', obsah = '".$obsah."', datum_vydani = '".$datum_vydani."' WHERE id = ".$_POST['id_update2']."";
+    $mysql = "UPDATE clanky SET nazev = '".$nazev."', autor = '".$autor."', kategorie = '".$kategorie."', obsah = '".$obsah."', datum_vydani = '".$datum_vydani."' WHERE id = ".$_POST['update2']."";
 
     $conn->query($mysql);
     header("Location: clanky-tabulka.php");

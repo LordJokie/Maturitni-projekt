@@ -204,13 +204,12 @@ if (isset($_SESSION['user_name'])) {
                     echo "<td>".'<input type="submit" value="save">'."</td>";
                       echo "</form>";
                       echo 
-                      "<td>".
-                          '<form action="proved.php" method="POST">'.
-                              '<input type="submit" value="delete">'.
-                              '<input type="hidden" name="delete" value='.$hrac["id"].'>'.
-                          '</form>'.
-                      "</td>";
-                    echo "</tr>";
+                            "<td>".
+                                '<form action="hraci-tabulka.php" method="POST">'.
+                                    '<input type="submit" value="cancel">'.
+                                '</form>'.
+                            "</td>";
+                echo "</tr>";
                 }
                 else {
                     echo "<tr>";

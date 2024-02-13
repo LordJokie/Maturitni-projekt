@@ -77,7 +77,12 @@
           padding-left: 0;
           padding-right: 0;
         }
-
+        .footer1 {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 0.1px;
+        }
 
     </style>
 </head>
@@ -112,10 +117,13 @@
       </div>
       <div class="container text-center">
       </div>
-      <div class="container-fluid">
-        <div class="row text-center" id="modrej">
-                 <p class="modrakrev">#modrakrev</p>
-        </div>
-    </div>
+
+      <footer>
+            <div class="container-fluid">
+              <div class="row text-center" id="modrej">
+                      <p class="modrakrev">#modrakrev</p>
+              </div>
+          </div>
+      </footer>
 </body>
 </html>

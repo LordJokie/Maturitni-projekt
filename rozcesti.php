@@ -55,6 +55,10 @@
         img{
             max-width: 100%;
             height: auto;
+            border: solid;
+            border-color: cyan;
+            border-radius: 5px;
+            border-width: 5px;
         }
         .card {
             margin-top: 23%;

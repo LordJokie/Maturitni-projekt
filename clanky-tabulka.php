@@ -124,7 +124,7 @@
         echo "<div class='col-6 col-md-4 text-center'>";
         echo 
         "<td>".
-            '<form action="insert.php" method="POST">'.
+            '<form action="clanky-tabulka.php" method="POST">'.
                 '<input type="submit" value="PŘIDAT ČLÁNEK" id="tlacitko">'.
                 '<input type="hidden" name="insert2">'.
             '</form>'.
@@ -152,32 +152,96 @@
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
-        foreach($clanky as $clanek){
+
+
+        if(isset($_POST["insert2"])){
             echo "<tr>";
-                echo "<td id='nazev'>".$clanek['nazev']."</td>";
-                echo "<td>".$clanek['autor']."</td>";
-                echo "<td>".$clanek['kategorie']."</td>";
-                echo "<td id='obsah'>".$clanek['obsah']."</td>";
-                echo "<td>".$clanek['datum_vydani']."</td>";
-                echo 
-                    "<td>".
-                        '<form action="proved.php" method="POST">'.
-                            '<input type="submit" value="update">'.
-                            '<input type="hidden" name="update2" value='.$clanek["id"].'>'.
-                        '</form>'.
-                    "</td>";
-                echo 
-                    "<td>".
-                        '<form action="proved.php" method="POST">'.
-                            '<input type="submit" value="delete">'.
-                            '<input type="hidden" name="delete2" value='.$clanek["id"].'>'.
-                        '</form>'.
-                    "</td>";
-            echo "</tr>";
+                    echo "<form action='proved.php' method='POST'>";
+                    echo "<td><input type='text' name='nazev'/></td>";
+                    echo "<td><input type='text' name='autor'/></td>";
+                    echo "<td><input type='text' name='kategorie'/></td>";
+                    echo "<td><input type='text' name='obsah'/></td>";
+                    echo "<td><input type='date' name='datum_vydani'/></td>";
+                    echo '<input type="hidden" name="insert2">';
+                    echo "<td>".'<input type="submit" value="add">'."</td>";
+                    echo "</form>";
+                    echo 
+                            "<td>".
+                                '<form action="clanky-tabulka.php" method="POST">'.
+                                    '<input type="submit" value="cancel">'.
+                                '</form>'.
+                            "</td>";
+                      
+                      
+        }
+        
+        foreach( $clanky as $clanek ) {
+            if(isset($_POST["update2"])){
+                if($_POST["update2"]=="$clanek[id]"){
+                echo "<tr>";
+                    echo "<form action='proved.php' method='POST'>";
+                    echo "<td><input type='text' name='nazev' value='".$clanek['nazev']."'/></td>";
+                    echo "<td><input type='text' name='autor' value='".$clanek['autor']."'/></td>";
+                    echo "<td><input type='text' name='kategorie' value='".$clanek['kategorie']."'/></td>";
+                    echo "<td><input type='text' name='obsah' value='".$clanek['obsah']."'/></td>";
+                    echo "<td><input type='date' name='datum_vydani' value='".$clanek['datum_vydani']."'/></td>";
+                    echo '<input type="hidden" name="update2" value='.$clanek["id"].'>';
+                    echo "<td>".'<input type="submit" value="save">'."</td>";
+                      echo "</form>";
+                      echo 
+                            "<td>".
+                                '<form action="clanky-tabulka.php" method="POST">'.
+                                    '<input type="submit" value="cancel">'.
+                                '</form>'.
+                            "</td>";
+                    echo "</tr>";
+                }
+                else {
+                    echo "<tr>";
+                        echo "<form action='clanky-tabulka.php' method='POST'>";
+                            echo "<td>" .$clanek['nazev']."</td>";
+                            echo "<td>" .$clanek['autor']."</td>";
+                            echo "<td>" .$clanek['kategorie']."</td>";
+                            echo "<td>" .$clanek['obsah']."</td>";
+                            echo "<td>" .$clanek['datum_vydani']."</td>";
+                            echo '<input type="hidden" name="update2" value='.$clanek["id"].'>';
+                            echo "<td>".'<input type="submit" value="edit">'."</td>";
+                            echo "</form>";
+            
+                        echo 
+                            "<td>".
+                                '<form action="proved.php" method="POST">'.
+                                    '<input type="submit" value="delete">'.
+                                    '<input type="hidden" name="delete2" value='.$clanek["id"].'>'.
+                                '</form>'.
+                            "</td>";
+                    echo "</tr>";
+                }
+            }
+            else {
+                echo "<tr>";
+                    echo "<form action='clanky-tabulka.php' method='POST'>";
+                        echo "<td>" .$clanek['nazev']."</td>";
+                        echo "<td>" .$clanek['autor']."</td>";
+                        echo "<td>" .$clanek['kategorie']."</td>";
+                        echo "<td>" .$clanek['obsah']."</td>";
+                        echo "<td>" .$clanek['datum_vydani']."</td>";
+                        echo '<input type="hidden" name="update2" value='.$clanek["id"].'>';
+                        echo "<td>".'<input type="submit" value="edit">'."</td>";
+                        echo "</form>";
+            
+                        echo 
+                            "<td>".
+                                '<form action="proved.php" method="POST">'.
+                                    '<input type="submit" value="delete">'.
+                                    '<input type="hidden" name="delete2" value='.$clanek["id"].'>'.
+                                '</form>'.
+                            "</td>";
+                    echo "</tr>";
+            }
         };
         echo "</tbody>";
     echo "</table>";
-    echo "</div>";
     echo "</div>";
     }
     else {
