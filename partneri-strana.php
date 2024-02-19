@@ -101,6 +101,13 @@
         <h1>Partneři</h1>
       </div>
 
+
+      <div class="container text-center">
+        <div class="row">
+          <a href="" target="_blank"><img alt="partner" src="obr1.jpg"/></a>
+          </div>
+        </div>
+
       <footer>
             <div class="container-fluid">
               <div class="row text-center" id="modrej">
