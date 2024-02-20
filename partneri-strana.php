@@ -64,11 +64,17 @@
           font-size: 80px;
           margin-top: 20px;
         }
+        #partneri {
+          margin-top: 30px;
+        }
         footer {
-          position: absolute;
           bottom: 0;
           width: 100%;
           height: min-content;
+          margin-top: 40px;
+        }
+        #partner {
+          padding: 10px;
         }
     </style>
 </head>
@@ -103,8 +109,17 @@
 
 
       <div class="container text-center">
-        <div class="row">
-          <a href="" target="_blank"><img alt="partner" src="obr1.jpg"/></a>
+        <div class="row" id="partneri">
+          <a href="https://www.dx-racer.cz" target="_blank"><img alt="partner" id="partner" src="img_dx.jpg"/></a>
+          <a href="https://www.epson.cz/cs_CZ/products/projectors" target="_blank"><img alt="partner" id="partner" src="img_epson.jpg"/></a>
+          <a href="https://bonus.ifortuna.cz/e-sports-esuba/" target="_blank"><img alt="partner" id="partner" src="img_fortuna.jpg"/></a>
+          <a href="https://www.intel.com/content/www/us/en/homepage.html" target="_blank"><img alt="partner" id="partner" src="img_intel.png"/></a>
+          <a href="https://www.protecton.cz" target="_blank"><img alt="partner" id="partner" src="img_protecton.jpg"/></a>
+          <a href="https://eu.puma.com/cz/en/home" target="_blank"><img alt="partner" id="partner" src="img_puma.png"/></a>
+          <a href="https://www.mujmastercard.cz" target="_blank"><img alt="partner" id="partner" src="ims_mc_sponzor.jpg"/></a>
+          <a href="https://www.kb.cz/cs/obcane" target="_blank"><img alt="partner" id="partner" src="kb_web_2.png"/></a>
+          <a href="https://www.kia.com/cz/" target="_blank"><img alt="partner" id="partner" src="kia_web.png"/></a>
+          <a href="https://www.lynx.cz" target="_blank"><img alt="partner" id="partner" src="lynx_web.png"/></a>
           </div>
         </div>
 

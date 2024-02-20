@@ -77,8 +77,7 @@
           padding-left: 0;
           padding-right: 0;
         }
-        .footer1 {
-          position: absolute;
+        footer {
           bottom: 0;
           width: 100%;
           height: min-content;
