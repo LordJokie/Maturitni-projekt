@@ -155,7 +155,8 @@ if (isset($_SESSION['user_name'])) {
             echo "<th scope='col'>"."Kategorie"."</th>";
             echo "<th scope='col'>"."Věk"."</th>";
             echo "<th scope='col'>"."Země"."</th>";
-            echo "<th scope='col'>"."Pozice"."</th>";            
+            echo "<th scope='col'>"."Pozice"."</th>";
+            echo "<th scope='col'>"."ImageURL"."</th>";        
             echo "<th scope='col'>"."Edit"."</th>";
             echo "<th scope='col'>"."Delete"."</th>";
         echo "</tr>";
@@ -173,6 +174,7 @@ if (isset($_SESSION['user_name'])) {
                     echo "<td><input type='number' name='vek'/></td>";
                     echo "<td><input type='text' name='zeme'/></td>";
                     echo "<td><input type='text' name='pozice'/></td>";
+                    echo "<td><input type='text' name='imageurl'/></td>";
                     echo '<input type="hidden" name="insert">';
                     echo "<td>".'<input type="submit" value="add">'."</td>";
                     echo "</form>";
@@ -200,6 +202,7 @@ if (isset($_SESSION['user_name'])) {
                     echo "<td><input type='number' name='vek' value='".$hrac['vek']."'/></td>";
                     echo "<td><input type='text' name='zeme' value='".$hrac['zeme']."'/></td>";
                     echo "<td><input type='text' name='pozice' value='".$hrac['pozice']."'/></td>";
+                    echo "<td><input type='text' name='imageurl' value='".$hrac['imageurl']."'/></td>";
                     echo '<input type="hidden" name="update" value='.$hrac["id"].'>';
                     echo "<td>".'<input type="submit" value="save">'."</td>";
                       echo "</form>";
@@ -220,6 +223,7 @@ if (isset($_SESSION['user_name'])) {
                             echo "<td>" .$hrac['vek']."</td>";
                             echo "<td>" .$hrac['zeme']."</td>";
                             echo "<td>" .$hrac['pozice']."</td>";
+                            echo "<td>" .$hrac['imageurl']."</td>";
                             echo '<input type="hidden" name="update1" value='.$hrac["id"].'>';
                             echo "<td>".'<input type="submit" value="edit">'."</td>";
                             echo "</form>";
@@ -243,6 +247,7 @@ if (isset($_SESSION['user_name'])) {
                             echo "<td>" .$hrac['vek']."</td>";
                             echo "<td>" .$hrac['zeme']."</td>";
                             echo "<td>" .$hrac['pozice']."</td>";
+                            echo "<td>" .$hrac['imageurl']."</td>";
                             echo '<input type="hidden" name="update1" value='.$hrac["id"].'>';
                             echo "<td>".'<input type="submit" value="edit">'."</td>";
                             echo "</form>";

@@ -14,8 +14,9 @@ if(isset($_POST['update'])){
     $vek = $_POST['vek'];
     $zeme = $_POST['zeme'];
     $pozice = $_POST['pozice'];
+    $imageurl = $_POST['imageurl'];
 
-    $sql = "UPDATE hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."' WHERE id = ".$_POST['update']."";
+    $sql = "UPDATE hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."' , imageurl = '".$imageurl."' WHERE id = ".$_POST['update']."";
 
     $conn->query($sql);
     header("Location: hraci-tabulka.php");
@@ -32,7 +33,8 @@ if(isset($_POST['insert'])) {
     $vek = $_POST['vek'];
     $zeme = $_POST['zeme'];
     $pozice = $_POST['pozice'];
-    $sql = "INSERT INTO hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."'";
+    $imageurl = $_POST['imageurl'];
+    $sql = "INSERT INTO hraci SET prezdivka = '".$prezdivka."', jmeno = '".$jmeno."', kategorie = '".$kategorie."', vek = '".$vek."', zeme = '".$zeme."', pozice = '".$pozice."', imageurl = '".$imageurl."'";
     $conn->query($sql);
     header("Location: hraci-tabulka.php");
     

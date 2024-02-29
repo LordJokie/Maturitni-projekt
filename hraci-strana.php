@@ -64,6 +64,40 @@
           font-size: 80px;
           margin-top: 20px;
         }
+        .card {
+          box-shadow: none !important;
+          background-color: white;
+          border: 5px solid #007FFF;
+          border-radius: 5px;
+        }
+        .card-title {
+          text-align: center;
+          font-weight: bold;
+          font-size:x-large;
+          color: black;
+        }
+        .card-text {
+          font-size:small;
+          font-weight: bolder;
+          color: black;
+        }
+        .card-subtitle {
+          font-size: medium;
+          font-weight: bolder;
+          color: black;
+        }
+        #img-hrac {
+          object-fit: cover;
+          max-width: 100%;
+          border:  2px solid black;
+        }
+        #col-hraci {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 40px;
+        }
         footer {
           bottom: 0;
           width: 100%;
@@ -73,7 +107,7 @@
     </style>
 </head>
 <body>
-<?php session_start() ?>
+<?php session_start(); ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -100,6 +134,28 @@
       <div class="container text-center">
         <h1>Hráči</h1>
       </div>
+
+      <div class="container">
+  <div class="row">
+    <?php
+        require_once ("dbconfig.php");
+        $sql = "SELECT * FROM hraci";
+        $hraci = $conn->query($sql);
+    foreach ($hraci as $hrac):
+    ?>
+      <div class="col-md-4 text-center" id="col-hraci">
+        <div class="card" style="width: 30rem;">
+          <img id="img-hrac" src="<?php echo $hrac['imageurl']; ?>" class="card-img-top" alt="..."> 
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $hrac['prezdivka']; ?></h5>
+            <p class="card-subtitle"><?php echo $hrac['jmeno']; ?></p>
+            <h6 class="card-text"><?php echo $hrac['kategorie']; ?></h6>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>
 
       <footer>
             <div class="container-fluid">
