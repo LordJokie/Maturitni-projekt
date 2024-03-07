@@ -6,7 +6,7 @@
     <title>Editace</title>
     <style>
          body {
-            background: black;
+            background-image: url("sestava-pozadi.png");
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,16 +21,17 @@
 
             form {
             width: 1000px;
-            border: 3px solid cyan;
+            border: 3px solid  #0069FF;
             padding: 20px;
             background: transparent;
             border-radius: 20px;
+            background-color: black;
             }
 
             h2 {
             text-align: center;
             margin-bottom: 40px;
-            color: cyan;
+            color:  #0069FF;
             }
 
             input {
@@ -43,7 +44,7 @@
             }
 
             label {
-            color: cyan;
+            color:  #0069FF;
             font-size: 18px;
             padding: 10px;
             }
@@ -52,18 +53,18 @@
             float: right;
             background: transparent;
             padding: 10px 15px;
-            color: cyan;
+            color:  #0069FF;
             border-radius: 5px;
             margin-right: 10px;
-            border: 1px solid cyan;
+            border: 1px solid  #0069FF;
             transition: .3s;
             }
 
             button:hover{
-            background: cyan;
+            background:  #0069FF;
             color: #000;
             cursor: pointer;
-            box-shadow: 0 0 10px  cyan, 0 0 20px cyan, 0 0 30px cyan;
+            box-shadow: 0 0 10px   #0069FF, 0 0 20px  #0069FF, 0 0 30px  #0069FF;
             border: 1px solid transparent;
             }
 

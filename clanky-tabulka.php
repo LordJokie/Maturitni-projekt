@@ -43,7 +43,7 @@
         height: 50px;
     }
     .table-bordered {
-        border: 3px solid cyan;
+        border: 3px solid  #0069FF;
         margin: 0;
     }
     tr {
@@ -53,13 +53,13 @@
         margin-top: 5px;
         height: 40px;
         background-color: black;
-        color: cyan;
+        color:  #0069FF;
     }
     #tlacitko:hover {
-        background-color: cyan;
+        background-color:  #0069FF;
         color: #000;
         cursor: pointer;
-        box-shadow: 0 0 10px  cyan, 0 0 20px cyan, 0 0 30px cyan;
+        box-shadow: 0 0 10px   #0069FF, 0 0 20px  #0069FF, 0 0 30px  #0069FF;
         border: 1px solid transparent;
         transition: 0.4s;
     }
@@ -91,7 +91,7 @@
 }
 
 .table td::-webkit-scrollbar-thumb {
-  background-color: cyan;
+  background-color:  #0069FF;
   border-radius: 2px;
 }
 

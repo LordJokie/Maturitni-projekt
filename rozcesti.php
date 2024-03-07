@@ -41,14 +41,14 @@
             margin-top: 200px;
             height: 100px;
             background-color: black;
-            color: cyan;
+            color:  #0069FF;
         }
 
         #tlacitko:hover {
-            background-color: cyan;
+            background-color:  #0069FF;
             color: #000;
             cursor: pointer;
-            box-shadow: 0 0 10px  cyan, 0 0 20px cyan, 0 0 30px cyan;
+            box-shadow: 0 0 10px   #0069FF, 0 0 20px  #0069FF, 0 0 30px  #0069FF;
             border: 1px solid transparent;
             transition: 0.4s;
         }
@@ -56,7 +56,7 @@
             max-width: 100%;
             height: auto;
             border: solid;
-            border-color: cyan;
+            border-color:  #0069FF;
             border-radius: 5px;
             border-width: 5px;
         }
