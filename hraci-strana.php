@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hráči</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
@@ -59,6 +60,7 @@
           height: 150px;
         }
         .modrakrev {
+          text-align: center;
           color: white;
           font-weight: bold;
           font-size: 80px;
@@ -101,8 +103,24 @@
         footer {
           bottom: 0;
           width: 100%;
+          background-color: #0069FF;
           height: min-content;
-          margin-top: 40px;
+          display: flex;
+          flex-direction: column;
+        }
+        footer * {
+          margin: 0;
+          padding: 0;
+        }
+        .odkazy  {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          
+        }
+        .odkazy a {
+          color: white;
         }
     </style>
 </head>
@@ -157,12 +175,17 @@
   </div>
 </div>
 
-      <footer>
-            <div class="container-fluid">
-              <div class="row text-center" id="modrej">
-                      <p class="modrakrev">#modrakrev</p>
-              </div>
-          </div>
+<footer>
+        <p class="modrakrev">#modrakrev</p>
+        <div class="odkazy">
+            <a href="https://www.facebook.com/esuba.eu"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/user/eSubacz"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/esuba.gg/"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/esubacz"><i class="bi bi-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.twitch.tv/eSuba"><i class="bi bi-twitch" aria-hidden="true"></i></a>
+            <a href="https://discord.gg/ESkSfUk"><i class="bi bi-discord" aria-hidden="true"></i></a>
+        </div>
       </footer>
+
 </body>
 </html>
