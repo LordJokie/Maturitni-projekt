@@ -9,6 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
+        body {
+          min-height: 100vh;
+        }
         ::-webkit-scrollbar {
           width: 10px;
         }
@@ -56,9 +59,9 @@
           color: #007FFF;
         }
         p {
-          font-size: 25px;
+          font-size: 32px;
           color: white;
-          margin-top: 5px;
+          margin-top: 35px;
         }
         h2 {
           font-size: 40px;
@@ -67,14 +70,14 @@
         }
         .col-md-6 {
           margin-top: 30px;
-          height: 200px;
+          height: 404px;
         }
         #kontakt {
-          margin-top: 30px;
+          margin-top: 60px;
         }
         .col-md-12 {
           background-color: #222;
-          height: 200px;
+          height: 300px;
         }
         #modrej {
           background-color: #0069FF;
