@@ -41,14 +41,14 @@
             margin-top: 200px;
             height: 100px;
             background-color: black;
-            color:  #0069FF;
+            color:  #00FFFF;
         }
 
         #tlacitko:hover {
-            background-color:  #0069FF;
+            background-color:  #00FFFF;
             color: #000;
             cursor: pointer;
-            box-shadow: 0 0 10px   #0069FF, 0 0 20px  #0069FF, 0 0 30px  #0069FF;
+            box-shadow: 0 0 10px   #00FFFF, 0 0 20px  #00FFFF, 0 0 30px  #00FFFF;
             border: 1px solid transparent;
             transition: 0.4s;
         }
@@ -56,7 +56,7 @@
             max-width: 100%;
             height: auto;
             border: solid;
-            border-color:  #0069FF;
+            border-color:  #00FFFF;
             border-radius: 5px;
             border-width: 5px;
         }

@@ -43,7 +43,7 @@
         height: 50px;
     }
     .table-bordered {
-        border: 3px solid  #0069FF;
+        border: 3px solid  #00FFFF;
         margin: 0;
     }
     tr {
@@ -53,13 +53,13 @@
         margin-top: 5px;
         height: 40px;
         background-color: black;
-        color:  #0069FF;
+        color:  #00FFFF;
     }
     #tlacitko:hover {
-        background-color:  #0069FF;
+        background-color:  #00FFFF;
         color: #000;
         cursor: pointer;
-        box-shadow: 0 0 10px   #0069FF, 0 0 20px  #0069FF, 0 0 30px  #0069FF;
+        box-shadow: 0 0 10px   #00FFFF, 0 0 20px  #00FFFF, 0 0 30px  #00FFFF;
         border: 1px solid transparent;
         transition: 0.4s;
     }
@@ -91,7 +91,7 @@
 }
 
 .table td::-webkit-scrollbar-thumb {
-  background-color:  #0069FF;
+  background-color:  #00FFFF;
   border-radius: 2px;
 }
 
