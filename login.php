@@ -104,11 +104,7 @@
 </head>
 <body>
 <?php
-    $servername= "localhost";
-    $username= "root";
-    $password = "";
-    $esuba = "esuba";
-    $conn = mysqli_connect($servername, $username, $password, $esuba);
+    require_once("dbconfig.php");
     if (!$conn) {
         echo "Connection failed!";
     }
